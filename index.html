@@ -5,14 +5,25 @@
     <title>Hello World!</title>
   </head>
   <body>
-    <h1>Hello World!</h1>
-    <!-- All of the Node.js APIs are available in this renderer process. -->
-    We are using Node.js <script>document.write(process.versions.node)</script>,
-    Chromium <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
+    <input type="text" placeholder="'Some quote ... '" name="quote">
+    <input type="text" placeholder="Joe Schmoe" name="name">
+    <input type="submit" value="Submit">
   </body>
 
+  <script src="https://www.gstatic.com/firebasejs/4.1.4/firebase.js"></script>
+  <!-- <script src="https://www.gstatic.com/firebasejs/4.1.3/firebase-database.js"></script> -->
   <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDYic8M2mX55fJVjQkAg90t9AXAzdPQE3A",
+      authDomain: "xyquotes-d0058.firebaseapp.com",
+      databaseURL: "https://xyquotes-d0058.firebaseio.com",
+      projectId: "xyquotes-d0058",
+      storageBucket: "xyquotes-d0058.appspot.com",
+      messagingSenderId: "102390389235"
+    };
+    firebase.initializeApp(config);
+
     // You can also require other files to run in this process
     require('./renderer.js')
   </script>
